@@ -52,7 +52,7 @@ this.getStudents()[index] = student;
 	@Override
 	public void addFirst(Student student) {
 		// Add your implementation here
-Student[] temp = new Student[this.students.length+1];
+         Student[] temp = new Student[this.students.length+1];
 		 temp[0] = student;
 		 for(int i = 1; i < temp.length; i++)
 			 temp[i] = this.students[i-1];
@@ -120,14 +120,8 @@ Student[] temp = new Student[this.students.length+1];
 	@Override
 	public Student[] getBetweenBirthDates(Date firstDate, Date lastDate) {
 		// Add your implementation here
-              ArrayList<Student> temp = new ArrayList<>();
-		   for(Student s : this.students)
-		   {
-		       if(s.getBirthDate().after(firstDate) && s.getBirthDate().before(lastDate))
-				   temp.add(s);
-		   }
-		   return  temp.toArray(new Student[temp.size()]); 
-		//return null;
+              
+		return null;
 	}
 
 	@Override
