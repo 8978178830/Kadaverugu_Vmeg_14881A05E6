@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.util.*;
 
 /**
  * A fix-sized array of students
@@ -117,7 +118,14 @@ Student[] temp = new Student[this.students.length+1];
 	@Override
 	public Student[] getBetweenBirthDates(Date firstDate, Date lastDate) {
 		// Add your implementation here
-		return null;
+              ArrayList<Student> temp = new ArrayList<>();
+		   for(Student s : this.students)
+		   {
+		       if(s.getBirthDate().after(firstDate) && s.getBirthDate().before(lastDate))
+				   temp.add(s);
+		   }
+		   return  temp.toArray(new Student[temp.size()]); 
+		//return null;
 	}
 
 	@Override
