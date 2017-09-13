@@ -139,6 +139,15 @@ if(index < 0 || index >= students.length)
 	@Override
 	public void removeFromElement(Student student) {
 		// Add your implementation here
+if(student == null)
+			throw new IllegalArgumentException();
+		else{
+			LinkedList<Student> llstudent = new LinkedList<Student>(Arrays.asList(this.students));
+			int firstIndex = llstudent.indexOf(student);
+			for(int i=firstIndex+1;i<llstudent.size();i++)
+				llstudent.remove(i);
+			this.students = llstudent.toArray(new Student[llstudent.size()]);
+		}
 	}
 
 	@Override
