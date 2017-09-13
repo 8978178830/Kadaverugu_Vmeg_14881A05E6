@@ -94,6 +94,13 @@ Student[] temp = new Student[this.students.length+1];
 	@Override
 	public void remove(Student student) {
 		// Add your implementation here
+if(student==null)
+throw new IllegalArgumentException();
+Student[] temp = new Student[this.students.length-1]; 
+		 int c = 0;
+		 for(int i = 0; i < this.students.length; i++)
+			 if(this.students[i] != student) temp[c++] = this.students[i];
+		 this.students = temp;
 	}
 
 	@Override
