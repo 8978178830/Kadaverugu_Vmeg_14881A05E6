@@ -178,6 +178,13 @@ Student[] temp = new Student[this.students.length-1];
 	@Override
 	public Student getNextStudent(Student student) {
 		// Add your implementation here
-		return null;
+if(student == null)
+			throw new IllegalArgumentException();
+		else{
+			LinkedList<Student> llstudent = new LinkedList<Student>(Arrays.asList(this.students));
+			int firstIndex = llstudent.indexOf(student);
+			return llstudent.get(firstIndex+1);
+		}
+		//return null;
 	}
 }
