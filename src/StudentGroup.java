@@ -121,6 +121,19 @@ LinkedList<Student> llstudent = new LinkedList<Student>(Arrays.asList(this.stude
 	@Override
 	public void removeFromIndex(int index) {
 		// Add your implementation here
+if(index < 0 || index >= students.length)
+			throw new IllegalArgumentException();
+		else{
+			LinkedList<Student> llstudent = new LinkedList<Student>(Arrays.asList(this.students));
+			for(int i=index;i<llstudent.size();i++)
+			{	
+				llstudent.remove(i);
+				
+			}
+			//for(int i=0;i<llstudent.size();i++)
+				//System.out.println("llstudent:"+llstudent.get(i).getFullName());
+			students = llstudent.toArray(new Student[llstudent.size()]);
+		}
 	}
 
 	@Override
