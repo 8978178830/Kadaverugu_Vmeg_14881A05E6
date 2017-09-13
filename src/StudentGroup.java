@@ -33,6 +33,8 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void setStudents(Student[] students) {
 		// Add your implementation here
+if(students==null)
+			throw new IllegalArgumentException();
 
     this.students=students;
 	}
@@ -288,7 +290,7 @@ LinkedList<Student> llstudent=new LinkedList<Student>();
 	@Override
 	public Student[] getStudentsByAge(int age) {
 		// Add your implementation here
- int age1;
+ int a1;
 		LinkedList<Student> llstudent=new LinkedList<Student>();
 		for(int i=0;i<this.students.length;i++){
 			Date d1=new Date(98,1,25);
@@ -297,12 +299,12 @@ LinkedList<Student> llstudent=new LinkedList<Student>();
 			a.setTime(d1);
 			Calendar b = Calendar.getInstance();
 			b.setTime(d2);
-			age1 = b.get(Calendar.YEAR) - a.get(Calendar.YEAR);
+			a1 = b.get(Calendar.YEAR) - a.get(Calendar.YEAR);
 			
 			if (a.get(Calendar.MONTH) > b.get(Calendar.MONTH) || (a.get(Calendar.MONTH) == b.get(Calendar.MONTH) && a.get(Calendar.DATE) > b.get(Calendar.DATE)))
-        		age1--;
+        		a1--;
 			//System.out.println("Years:  "+b.get(Calendar.YEAR)+"   "+a.get(Calendar.YEAR)+"   "+age1);
-			if(age1 == age)
+			if(a1 == age)
 				llstudent.add(this.students[i]);
 		}
 		if(llstudent.size() > 0)
