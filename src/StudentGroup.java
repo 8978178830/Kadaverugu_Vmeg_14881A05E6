@@ -32,7 +32,7 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void setStudents(Student[] students) {
 		// Add your implementation here
-this.students=students;
+    this.students=students;
 	}
 
 	@Override
@@ -49,6 +49,11 @@ this.students=students;
 	@Override
 	public void addFirst(Student student) {
 		// Add your implementation here
+Student[] temp = new Student[this.students.length+1];
+		 temp[0] = student;
+		 for(int i = 1; i < temp.length; i++)
+			 temp[i] = this.students[i-1];
+		 this.students = temp;
 	}
 
 	@Override
