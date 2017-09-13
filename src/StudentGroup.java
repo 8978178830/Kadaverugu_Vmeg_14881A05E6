@@ -106,13 +106,16 @@ if(index < 0 || index >= students.length)
 	@Override
 	public void remove(Student student) {
 		// Add your implementation here
-if(student==null)
-throw new IllegalArgumentException();
-Student[] temp = new Student[this.students.length-1]; 
-		 int c = 0;
-		 for(int i = 0; i < this.students.length; i++)
-			 if(this.students[i] != student) temp[c++] = this.students[i];
-		 this.students = temp;
+LinkedList<Student> llstudent = new LinkedList<Student>(Arrays.asList(this.students));
+		int firstIndex = llstudent.indexOf(student);
+		if(firstIndex == -1)
+			throw new IllegalArgumentException("Student not exist");
+		else if(student == null)
+			throw new IllegalArgumentException();
+		else{
+			llstudent.remove(firstIndex);
+			students = llstudent.toArray(new Student[llstudent.size()]);
+		}
 	}
 
 	@Override
