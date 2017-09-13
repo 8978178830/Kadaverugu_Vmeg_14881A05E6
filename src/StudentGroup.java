@@ -64,6 +64,13 @@ Student[] temp = new Student[this.students.length+1];
 	@Override
 	public void add(Student student, int index) {
 		// Add your implementation here
+Student[] temp = new Student[this.students.length+1];
+		 for(int i = 0; i < index; i++)
+			 temp[i] = this.students[i];
+		 temp[index] = student;
+		 for(int i = index; i < this.students.length; i++)
+			 temp[i+1] = this.students[i];
+		 this.students = temp;
 	}
 
 	@Override
