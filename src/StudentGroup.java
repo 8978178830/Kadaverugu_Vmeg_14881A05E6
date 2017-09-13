@@ -62,6 +62,11 @@ this.getStudents()[index] = student;
 	@Override
 	public void addLast(Student student) {
 		// Add your implementation here
+ Student[] temp = new Student[this.getStudents().length+1];
+		 for(int i = 0; i < this.students.length; i++)
+			 temp[i] = this.students[i];
+		 temp[temp.length - 1] = student;
+		 this.students = temp;
 	}
 
 	@Override
