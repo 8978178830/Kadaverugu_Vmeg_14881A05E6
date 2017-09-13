@@ -57,6 +57,7 @@ if(index < 0||index>=this.students.length)
 	@Override
 	public void addFirst(Student student) {
 		// Add your implementation here
+
          Student[] temp = new Student[this.students.length+1];
 		 temp[0] = student;
 		 for(int i = 1; i < temp.length; i++)
@@ -77,6 +78,8 @@ if(index < 0||index>=this.students.length)
 	@Override
 	public void add(Student student, int index) {
 		// Add your implementation here
+if(index < 0||index>=this.students.length)
+          throw new IllegalArgumentException();
 Student[] temp = new Student[this.students.length+1];
 		 for(int i = 0; i < index; i++)
 			 temp[i] = this.students[i];
