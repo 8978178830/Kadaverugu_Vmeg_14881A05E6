@@ -94,6 +94,8 @@ Student[] temp = new Student[this.students.length+1];
 	@Override
 	public void remove(int index) {
 		// Add your implementation here
+if(index < 0 || index >= students.length)
+			throw new IllegalArgumentException();
   Student[] temp = new Student[this.students.length-1]; 
 		 int c = 0;
 		 for(int i = 0; i < this.students.length; i++)
