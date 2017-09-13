@@ -264,19 +264,37 @@ LinkedList<Student> llstudent=new LinkedList<Student>();
 	@Override
 	public int getCurrentAgeByDate(int indexOfStudent) {
 		// Add your implementation here
+              int age;
+		if(indexOfStudent == 0)
+			throw new IllegalArgumentException();
+		else{
+			Date d1=new Date(98,1,25);
+			Date d2=this.students[indexOfStudent].getBirthDate();
+			Calendar a = Calendar.getInstance();
+			a.setTime(d1);
+			Calendar b = Calendar.getInstance();
+			b.setTime(d2);
+			
+			age = b.get(Calendar.YEAR) - a.get(Calendar.YEAR);
+			if (a.get(Calendar.MONTH) > b.get(Calendar.MONTH) || (a.get(Calendar.MONTH) == b.get(Calendar.MONTH) && a.get(Calendar.DATE) > b.get(Calendar.DATE)))
+        		age--;
+		}
+		if(age > 0)
+			return age;
+
 		return 0;
 	}
 
 	@Override
 	public Student[] getStudentsByAge(int age) {
 		// Add your implementation here
-		return null;
+                return null;
 	}
 
 	@Override
 	public Student[] getStudentsWithMaxAvgMark() {
 		// Add your implementation here
-LinkedList<Student> llstudent=new LinkedList<Student>();
+              LinkedList<Student> llstudent=new LinkedList<Student>();
 		double avg=0;
 		for(int i=0;i<this.students.length;i++){
 			double av=this.students[i].getAvgMark();
